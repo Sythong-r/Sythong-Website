@@ -1,25 +1,20 @@
-<style>
-    section#site-header {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-
-    .menu{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        list-style: none;
-        margin: 0;
-        height: 100%;
-    }
-
-    .menu li {
-        margin: auto 1em;
-    }
-
-    h1{
-        display: flex;
-        margin: 0;
-        flex-direction: row;
-    }
+#name-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+.name{
+    flex-grow: 8;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 32px;
+}
+.menu-item{
+    flex-grow: 0.3;
+    text-align: right;
+    font-family: Verdana;
+    font-size: 15px;
+}
