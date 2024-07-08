@@ -11,6 +11,7 @@
     text-align: left;
     font-family: Verdana;
     font-size: 32px;
+    color: #00b900;
 }
 .menu-item{
     flex-grow: 0.3;
