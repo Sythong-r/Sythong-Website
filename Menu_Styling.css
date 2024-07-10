@@ -1,7 +1,7 @@
 #name-menu{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: row wrap;
     align-items: center;
     padding-left: 10px;
     padding-right: 40px;
