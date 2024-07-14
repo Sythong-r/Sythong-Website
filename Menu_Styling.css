@@ -34,26 +34,28 @@ body{
         #name-menu{
             display: flex;
             flex-direction: column;
-            height: 10vh;
+            height: 22vh;
+            position: relative;
     
         }
         .name{
             text-align: left;
             font-family: Verdana;
-            font-size: 32px;
+            font-size: 6vh;
             color: #00b900;
+            margin: 0;
         }
         .menu-item{
             text-align: left;
             font-family: Verdana;
-            font-size: 15px;
+            font-size: 3vh;
         }
     }
 
 
 
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
+@media only screen and (min-width: 750px) {
+    /* For tablets and laptops: */
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
     .col-s-3 {width: 25%;}
@@ -73,61 +75,25 @@ body{
         align-items: center;
         padding-left: 10px;
         padding-right: 10px;
-        height: 10vh;
+        height: 9vh;
     }
     .name{
         flex-grow: 8;
         text-align: left;
         font-family: Verdana;
-        font-size: 32px;
+        font-size: 6vh;
         color: #00b900;
+        margin: 0;
     }
     .menu-item{
         flex-grow: 0.3;
         text-align: right;
         font-family: Verdana;
-        font-size: 15px;
+        font-size: 3vh;
     
     }
   }
   
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-  }
-
-    /*#name-menu{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-left: 10px;
-        padding-right: 40px;
-    }
-    .name{
-        flex-grow: 8;
-        text-align: left;
-        font-family: Verdana;
-        font-size: 32px;
-        color: #00b900;
-    }
-    .menu-item{
-        flex-grow: 0.3;
-        text-align: right;
-        font-family: Verdana;
-        font-size: 15px;
-    
-    }*/
 
 /*footer*/
 footer{
@@ -149,8 +115,9 @@ footer{
       }
 }   
 main{
-    display:block;
+    display:inline-block;
     margin-left:2%;
     margin-right:2%;
-    margin-bottom:81vh;
+    margin-bottom:82vh;
+    position: relative;
 }
