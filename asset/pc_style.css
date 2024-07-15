@@ -33,7 +33,7 @@ body{
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 9vh;
+        height: 40px;
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -41,7 +41,7 @@ body{
         flex-grow: 8;
         text-align: left;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 6vh;
+        font-size: 32px;
         color: #00b900;
         margin: 0;
     }
@@ -49,7 +49,7 @@ body{
         flex-grow: 0.3;
         text-align: right;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 3vh;
+        font-size: 16px;
     
     }
 
@@ -61,7 +61,7 @@ body{
         /*margin-bottom:82vh;*/
         position: relative;
         line-height: 30px;
-        min-height: 82vh;
+        min-height: calc(100vh - 80px);
     
         .about-img{
             width: 320px;
@@ -78,22 +78,21 @@ body{
 
 
 /*footer*/
-footer{
+#footer{
     position:sticky;
     bottom:0;
     left:0;
     width:100%;
-    height: 9vh;
+    height: 40px;
     display: flex;
     background-color: #64a264;
     flex-shrink:0;
-    margin-top: 
-    
-    
-    .logo img{
-        height:6vh;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-      }
-}   
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.logo img{
+    display: flex;
+    height: 30px;
+    margin-top: 5px;
+  }
