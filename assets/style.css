@@ -45,11 +45,12 @@ header p {
 
 #menu-items div {
     display: inline;
+    text-decoration: none; /*remove underline from under menu items */
 }
 
 #menu-items div {
     text-decoration: none;
-    color: #262424;
+    color: #292929;
     font-weight: bold;
     font-size: 1.1em;
     padding: 0.5em 1em; /* add clickable area */
@@ -58,7 +59,6 @@ header p {
 
 #menu-items div a:hover {
     color: #027b02; /* color change with mouse hover */
-    text-decoration: none; /*remove underline from under menu items */
 }
 
 /* Responsive Header for Small Screens */
