@@ -7,7 +7,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(233, 219, 206);
+    background-color: rgb(226, 226, 225);
     line-height: 1.8;
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ header p {
 }
 
 * Navigation Bar */
-#menu-items {
+#menu-items div {
     list-style: none;
     display: flex;
     flex-wrap: wrap; /* wrapping for small screens */
