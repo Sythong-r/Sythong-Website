@@ -7,7 +7,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #f0fff0;
+    background-color: #eef3f7;
     line-height: 1.8;
     margin: 0;
     padding: 0;
@@ -47,17 +47,17 @@ header p {
     display: inline;
 }
 
-/* nav ul li a {
+#menu-items div {
     text-decoration: none;
-    color: #000000;
+    color: #1c1c1c;
     font-weight: bold;
     font-size: 1.1em;
-    padding: 0.5em 1em; /* Adds clickable area
+    padding: 0.5em 1em; /* add clickable area */
     transition: color 0.3s ease-in-out;
-} */
+}
 
-nav ul li a:hover {
-    color: #00b900; /* color change with mouse hover */
+#menu-items div a:hover {
+    color: #027b02; color change with mouse hover
 }
 
 /* Responsive Header for Small Screens */
