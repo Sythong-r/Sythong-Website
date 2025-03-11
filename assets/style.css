@@ -57,7 +57,7 @@ header p {
 }
 
 #menu-items div a:hover {
-    color: #027b02; color change with mouse hover
+    color: #027b02; /* color change with mouse hover */
 }
 
 /* Responsive Header for Small Screens */
