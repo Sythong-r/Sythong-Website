@@ -49,7 +49,7 @@ header p {
 
 #menu-items div {
     text-decoration: none;
-    color: #1c1c1c;
+    color: #262424;
     font-weight: bold;
     font-size: 1.1em;
     padding: 0.5em 1em; /* add clickable area */
@@ -58,6 +58,7 @@ header p {
 
 #menu-items div a:hover {
     color: #027b02; /* color change with mouse hover */
+    text-decoration: none; /*remove underline from under menu items */
 }
 
 /* Responsive Header for Small Screens */
