@@ -9,7 +9,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #eef3f7;
     line-height: 1.8;
-    margin: 0;
+    margin: 1em;
     padding: 0;
 }
 
@@ -46,15 +46,10 @@ header p {
 #menu-items div {
     display: inline;
     text-decoration: none; /*remove underline from under menu items */
-}
-
-#menu-items div {
-    text-decoration: none;
     color: #292929;
     font-weight: bold;
     font-size: 1.1em;
     padding: 0.5em 1em; /* add clickable area */
-    transition: color 0.3s ease-in-out;
 }
 
 #menu-items div a:hover {
