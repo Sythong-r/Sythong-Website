@@ -1,0 +1,69 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(233, 219, 206);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    color: #00b900;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555555;
+}
+
+* Navigation Bar */
+nav div {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* wrapping for small screens */
+    justify-content: center;
+    gap: 1em; /* space between menu item */
+    margin-top: 1.5em;
+    padding: 0 1em; /* prevents items from being cut off on small screens */
+    overflow: hidden; /* no items overflow */
+}
+
+nav div {
+    display: inline;
+}
+
+/* nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 1em; /* Adds clickable area */
+    transition: color 0.3s ease-in-out;
+} */
+
+nav ul li a:hover {
+    color: #00b900; /* color change with mouse hover */
+}
+
+/* Responsive Header for Small Screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* vertical navigation for small screen */
+        align-items: center;
+    }
+}
