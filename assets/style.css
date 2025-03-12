@@ -68,19 +68,30 @@ nav ul li a:hover {
 }
 
 main {
-    display: inline-block;
+    display: inline-flex;
     line-height: 2em;
     min-height: 70vh;
-    padding: 1em 1.8em 1em 1.8em
+    padding: 1em 0em 1em 2em;
 }
 
 main article {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em 2em 1em 2em
+    padding: 1em 1em 1em 0em;
+    width: 60em;
+
+}
+
+main aside {
+    display: flex;
+    overflow: hidden;
+    padding: 0em;
+    width: 10em;
+    background-color: #bde3bd;
+    justify-content: center;
 }
 
 main .about-img {
-    width: 320px;
+    width: 15em;
     float: left;
     margin-right: 20px;
     margin-bottom: 20px;
