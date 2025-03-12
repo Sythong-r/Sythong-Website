@@ -8,7 +8,6 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #eef3f7;
-    line-height:2.7em;
     margin: 0;
     padding: 0;
 }
@@ -16,19 +15,14 @@ body {
 /* Header */
 header {
     text-align: center;
-    padding: 2em 1em;
+    padding: 2em 1em 0em 1em;
 }
 
 header h1 {
     font-size: 2.5em;
     font-weight: bold;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.5em;
     color: #027b02;
-}
-
-header p {
-    font-size: 1.2em;
-    color: #555555;
 }
 
 * Navigation Bar */
@@ -41,6 +35,7 @@ nav ul {
     margin-top: 1.5em;
     padding: 0 1em; /* prevents items from being cut off on small screens */
     overflow: hidden; /* no items overflow */
+    height: 2em
 }
 
 nav ul li {
@@ -48,10 +43,10 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none; /*remove underline from under menu items */
+    text-decoration: none; /*emove underline from under menu items */
     color: #101010;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.5em;
     padding: 0.5em 1em; /* add clickable area */
 }
 
@@ -69,18 +64,19 @@ nav ul li a:hover {
     nav ul li a {
         font-size: 1em; /* Slightly smaller text for mobile */
         padding: 0.3em; /* Adjust spacing for better fit */
-    }
+    } 
 }
 
 main {
-    display:inline-block;
-    margin:0;
-    margin-left:8%;
-    margin-right:8%;
-    position: relative;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 30px;
+    display: inline-block;
+    line-height: 2em;
     min-height: 70vh;
+    padding: 1em 1.8em 1em 1.8em
+}
+
+main article {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em 2em 1em 2em
 }
 
 main .about-img {
@@ -91,22 +87,19 @@ main .about-img {
     margin-top: 0px;
 }
 
-main .about-text {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 25px;
-    position: auto;
-}
-
 /*footer*/
 footer {
     text-align: center;
-    padding: 1.5em 0.5em;
-    font-size: 1em;
-    color: #8fd88f;
-    border-top: 1px solid #101010;
+    border-top: 2px solid #027b02;
+    height: 3em;
     }
 
+footer nav {
+    display: block;
+    margin: 0.75em;
+}
+
 footer img {
-    height: 30px;
+    height: 1.5em;
     float: center;
 }
