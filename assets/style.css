@@ -8,8 +8,8 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #eef3f7;
-    line-height: 1.8;
-    margin: 1em;
+    line-height:2.7em;
+    margin: 0;
     padding: 0;
 }
 
@@ -56,25 +56,57 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #027b02; /* color change with mouse hover */
+    background-color: #8fd88f; /* color change with mouse hover */
 }
 
-/* Responsive Header for Small Screens */
+/* Responsive header for small screen */
 @media (max-width: 768px) {
-
-    /* nav ul {
-        flex-direction: column; /* vertical navigation for small screen
-        align-items: center;
-    } */
-    
     nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 60px;
-      }
-      
+        flex-direction: column; /* Stack navigation vertically on small screens */
+        align-items: center;
+    }
+
     nav ul li a {
-        display: block;
-      }
+        font-size: 1em; /* Slightly smaller text for mobile */
+        padding: 0.3em; /* Adjust spacing for better fit */
+    }
+}
+
+main {
+    display:inline-block;
+    margin:0;
+    margin-left:8%;
+    margin-right:8%;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+    min-height: 70vh;
+}
+
+main .about-img {
+    width: 320px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+main .about-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 25px;
+    position: auto;
+}
+
+/*footer*/
+footer {
+    text-align: center;
+    padding: 1.5em 0.5em;
+    font-size: 1em;
+    color: #8fd88f;
+    border-top: 1px solid #101010;
+    }
+
+footer img {
+    height: 30px;
+    float: center;
 }
