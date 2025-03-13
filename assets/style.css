@@ -109,6 +109,7 @@ footer img {
         margin: 0em;
         padding: 0px 0px 15px 0px;
         display: block;
+        float: none;
         align-items: center;
     }
 }
