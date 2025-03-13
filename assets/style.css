@@ -10,6 +10,9 @@ body {
     background-color: #eef3f7;
     margin: 0;
     padding: 0;
+    word-wrap: break-word; /* word wrap for older browsers */
+    overflow-wrap: break-word; /* word wrap for newer browsers */
+    max-width: 100%;
 }
 
 /* Header */
@@ -57,13 +60,28 @@ nav ul li a:hover {
 main {
     display: inline-block;
     line-height: 2em;
-    min-height: 70vh;
-    margin: 1em 1.8em 1em 1.8em
+    min-height: 82dvh; /*dvh dynamic min height*/
+    margin: 1em 1.8em 1em 1.8em;
+    max-width: 100%;
 }
 
 main article {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 1em 2em 1em 2em;
+}
+
+main article p{
+    margin-bottom: 1em; /*spacing between paragraph */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    text-align: justify;
+    text-justify: inter-word; /*add space between word to justify text*/
+}
+
+main article p.list{
+    margin-left: 2em;
+    margin-right: 2em;
+
 }
 
 main .about-img {
