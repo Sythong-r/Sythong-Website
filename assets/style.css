@@ -75,15 +75,32 @@ main article {
 }
 
 main article p{
-    margin-bottom: 1em; /*spacing between paragraph */
+    margin-bottom: 0.5em; /*spacing between paragraph */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
+    display: inline-block;
     /* text-align: justify;
     text-justify: inter-word; add space between word to justify text */
 }
 
 main article ol{
     margin-left: 3em;
+
+}
+
+main article address{
+    display: block;
+    float: left;
+    margin-bottom: 1em;
+
+}
+
+main article time{
+    display: block;
+    font-style: italic;
+    float: left;
+    margin-bottom: 1em;
+    margin-left: 1em;
 
 }
 
