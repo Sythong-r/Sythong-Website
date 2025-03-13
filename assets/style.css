@@ -54,36 +54,22 @@ nav ul li a:hover {
     background-color: #8fd88f; /* color change with mouse hover */
 }
 
-/* Responsive header for small screen */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack navigation vertically on small screens */
-        align-items: center;
-    }
-
-    nav ul li a {
-        font-size: 1em; /* Slightly smaller text for mobile */
-        padding: 0.3em; /* Adjust spacing for better fit */
-    } 
-}
-
 main {
     display: inline-block;
     line-height: 2em;
     min-height: 70vh;
-    padding: 1em 1.8em 1em 1.8em
+    margin: 1em 1.8em 1em 1.8em
 }
 
 main article {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em 2em 1em 2em
+    margin: 1em 2em 1em 2em;
 }
 
 main .about-img {
     width: 320px;
     float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    padding-right: 20px;
     margin-top: 0px;
 }
 
@@ -102,4 +88,27 @@ footer nav {
 footer img {
     height: 1.5em;
     float: center;
+}
+
+/* Responsive header for small screen */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation vertically on small screens */
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Slightly smaller text for mobile */
+        padding: 0.3em; /* Adjust spacing for better fit */
+    }
+    main{
+        margin: 0em;
+        padding-top: 1em 1.8em 1em 1.8em;
+    }
+    main .about-img{
+        margin: 0em;
+        padding: 0em;
+        display: block;
+        align-items: center;
+    }
 }
