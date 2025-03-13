@@ -58,29 +58,32 @@ nav ul li a:hover {
 }
 
 main {
-    display: inline-block;
+    /* display: inline-block; */
     line-height: 2em;
     min-height: 82dvh; /*dvh dynamic min height*/
-    margin: 1em 1.8em 1em 1.8em;
-    max-width: 100%;
+    /* margin: 1em 1.8em 1em 1.8em; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
 main article {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 1em 2em 1em 2em;
+    margin: 1em 1.8em 1em 1.8em;
+    width: 60%;
+
 }
 
 main article p{
     margin-bottom: 1em; /*spacing between paragraph */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
-    text-align: justify;
-    text-justify: inter-word; /*add space between word to justify text*/
+    /* text-align: justify;
+    text-justify: inter-word; add space between word to justify text */
 }
 
 main article ol{
     margin-left: 3em;
-    margin-right: 2em;
 
 }
 
@@ -119,15 +122,21 @@ footer img {
         font-size: 1em; /* Slightly smaller text for mobile */
         padding: 0.3em; /* Adjust spacing for better fit */
     }
-    main{
+    main {
         margin: 0em;
         padding-top: 1em 1.8em 1em 1.8em;
     }
+    main article {
+        width: 80%;
+
+    }
+
     main .about-img{
         margin: 0em;
         padding: 0px 0px 15px 0px;
         display: block;
         float: none;
         align-items: center;
+        width: 100%;
     }
 }
