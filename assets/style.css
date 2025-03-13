@@ -78,8 +78,8 @@ main article p{
     text-justify: inter-word; /*add space between word to justify text*/
 }
 
-main article p.list{
-    margin-left: 2em;
+main article ol{
+    margin-left: 3em;
     margin-right: 2em;
 
 }
