@@ -107,7 +107,7 @@ footer img {
     }
     main .about-img{
         margin: 0em;
-        padding: 0em;
+        padding: 0px 0px 15px 0px;
         display: block;
         align-items: center;
     }
