@@ -75,17 +75,18 @@ main article {
 
 }
 
-main article .about-img {
+/* this complicates formating images in posts */
+/* main article .about-img {
     display: block;
     width: 40%;
     float: left;
     padding-right: 20px;
     margin-top: 0px;
-}
+} */
 
 main article img{
     display: block;
-    width: 50%;
+    width: 45%;
     float: left;
     padding-right: 20px;
     margin-top: 0px;
@@ -153,28 +154,24 @@ footer img {
         flex-direction: column; /* Stack navigation vertically on small screens */
         align-items: center;
     }
-
     nav ul li a {
         font-size: 1em; /* Slightly smaller text for mobile */
         padding: 0.3em; /* Adjust spacing for better fit */
     }
     main {
         margin: 0em;
-        padding-top: 1em 1.8em 1em 1.8em;
+        padding-top: 1em; /*1.8em 1em 1.8em */
     }
     main article {
         width: 80%;
 
     }
-
-    main .about-img{
-        margin: 0em;
-        padding: 0px 0px 15px 0px;
-        display: block;
-        float: none;
-        align-items: center;
+    main article img{
         width: 100%;
-
+        padding-bottom: 10px;
+    }
+    main article h1{
+        font-size: 1em
     }
 
 }
