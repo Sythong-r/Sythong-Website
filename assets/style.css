@@ -118,7 +118,7 @@ main article time{
 }
 
 main article p{
-    margin-bottom: 1.5em; /*spacing between paragraph */
+    margin-bottom: 2em; /*spacing between paragraph */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
     line-height: 1.7em;
