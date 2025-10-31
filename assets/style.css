@@ -118,9 +118,10 @@ main article time{
 }
 
 main article p{
-    margin-bottom: 0.5em; /*spacing between paragraph */
+    margin-bottom: 1.5em; /*spacing between paragraph */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
+    line-height: 1.7em;
     /* display: inline-block; */
     /* text-align: justify;
     text-justify: inter-word; add space between word to justify text */
