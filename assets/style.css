@@ -46,7 +46,7 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none; /*emove underline from under menu items */
+    text-decoration: none; /*remove underline from under menu items */
     color: #4f4f4f;
     font-weight: bold;
     font-size: 1.5em;
@@ -130,6 +130,15 @@ main article p{
 main article ol{
     margin-left: 3em;
 
+}
+
+main article hr{
+    border: none;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px auto;
 }
 
 /*footer*/
