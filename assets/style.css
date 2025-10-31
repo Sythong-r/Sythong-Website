@@ -128,8 +128,7 @@ main article p{
 }
 
 main article ol{
-    margin-left: 3em;
-
+    margin-left: 3em
 }
 
 main article hr{
@@ -141,6 +140,9 @@ main article hr{
     margin: 10px auto;
 }
 
+main article blockquote{
+    margin-left: 3em;
+}
 /*footer*/
 footer {
     text-align: center;
