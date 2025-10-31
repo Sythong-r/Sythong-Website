@@ -84,12 +84,20 @@ main article {
     margin-top: 0px;
 } */
 
-main article img{
+main article img.about-img{
     display: block;
     width: 45%;
     float: left;
     padding-right: 20px;
     margin-top: 0px;
+
+}
+
+main article img{
+    display: block;
+    width: 50%;
+    padding: auto;
+    margin: auto;
 
 }
 
