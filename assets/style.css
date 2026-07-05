@@ -1,0 +1,197 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #eef3f7;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word; /* word wrap for older browsers */
+    overflow-wrap: break-word; /* word wrap for newer browsers */
+    max-width: 100%;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2em 1em 0em 1em;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #027b02;
+}
+
+* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* wrapping for small screens */
+    justify-content: center;
+    gap: 1em; /* space between menu item */
+    margin-top: 1.5em;
+    padding: 0 1em; /* prevents items from being cut off on small screens */
+    overflow: hidden; /* no items overflow */
+    height: 2em
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none; /*remove underline from under menu items */
+    color: #4f4f4f;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 0.5em 1em; /* add clickable area */
+}
+
+nav ul li a:hover {
+    background-color: #8fd88f; /* color change with mouse hover */
+}
+
+main {
+    /* display: inline-block; */
+    line-height: 2em;
+    margin-top: 2em;
+    min-height: 82dvh; /*dvh dynamic min height*/
+    /* margin: 1em 1.8em 1em 1.8em; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    /* justify-content:center; */
+}
+
+main article {
+    margin: 1em 1.8em 1em 1.8em;
+    width: 60%;
+
+}
+
+/* this complicates formating images in posts */
+/* main article .about-img {
+    display: block;
+    width: 40%;
+    float: left;
+    padding-right: 20px;
+    margin-top: 0px;
+} */
+
+main article img.about-img{
+    display: block;
+    width: 45%;
+    float: left;
+    padding-right: 20px;
+    margin-top: 0px;
+
+}
+
+main article img{
+    display: block;
+    width: 50%;
+    padding: auto;
+    margin: auto;
+
+}
+
+main article h1{
+    font-size: 1.25em;
+    color: #3f5a4f;
+
+}
+
+main article address{
+    display: block;
+    float: left;
+    margin-bottom: 1em;
+    width: 50%;
+
+}
+
+main article time{
+    display: block;
+    font-style: italic;
+    margin-bottom: 1em;
+    width: 50%;
+    float: right;
+    text-align: right;
+
+}
+
+main article p{
+    margin-bottom: 2em; /*spacing between paragraph */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    line-height: 1.7em;
+    /* display: inline-block; */
+    /* text-align: justify;
+    text-justify: inter-word; add space between word to justify text */
+}
+
+main article ol{
+    margin-left: 3em
+}
+
+main article hr{
+    border: none;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+main article blockquote{
+    margin-left: 3em;
+}
+/*footer*/
+footer {
+    text-align: center;
+    border-top: 2px solid #027b02;
+    height: 3em;
+    }
+
+footer a {
+    display: block;
+    margin: 0.75em;
+}
+
+footer img {
+    height: 1.5em;
+    float: center;
+}
+
+/* Responsive header for small screen */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation vertically on small screens */
+        align-items: center;
+    }
+    nav ul li a {
+        font-size: 1em; /* Slightly smaller text for mobile */
+        padding: 0.3em; /* Adjust spacing for better fit */
+    }
+    main {
+        margin: 0em;
+        padding-top: 1em; /*1.8em 1em 1.8em */
+    }
+    main article {
+        width: 80%;
+
+    }
+    main article img{
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    main article h1{
+        font-size: 1em
+    }
+
+}
