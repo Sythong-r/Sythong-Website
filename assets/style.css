@@ -116,6 +116,7 @@ main article img.about-img{
     float: left;
     padding-right: 20px;
     margin-top: 0;
+    aspect-ratio: auto; /*opt out of the 16/9 aspcet ratio*/
 
 }
 
