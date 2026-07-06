@@ -262,7 +262,10 @@ Responsive: small screens
         aspect-ratio: 4/3; /*taller box, more height on phone*/
     }
     main article h1{
-        font-size: 1em
+        font-size: 1.6rem
+    }
+    main article h2{
+        font-size: 1.25rem;
     }
 
 }
