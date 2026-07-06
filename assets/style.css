@@ -83,7 +83,7 @@ nav ul li a:focus { /*so keyboard users see it too*/
 }
 
 /* ===========
-Navigation bar
+Main
    =========== */
 main {
     flex: 1;
@@ -119,11 +119,13 @@ main article img.about-img{
 
 }
 
-/*default centered image*/
+/*image display setup*/
 main article img{
     display: block;
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    aspect-ratio: 16/9; /*box to keep shape, height clas from width*/
+    object-fit: cover;
+    margin: 1.5em auto;
 
 }
 
@@ -242,8 +244,7 @@ Responsive: small screens
 
     }
     main article img{
-        width: 100%;
-        padding-bottom: 10px;
+        aspect-ratio: 4/3; /*taller box, more height on phone*/
     }
     main article h1{
         font-size: 1em
