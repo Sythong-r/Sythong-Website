@@ -130,11 +130,6 @@ main article img{
 
 }
 
-main article h1{
-    font-size: 1.25em;
-    color: var(--color-heading);
-
-}
 
 main article address{
     display: block;
@@ -148,11 +143,30 @@ main article time{
 
 }
 
-main article p{
-    margin-bottom: 2em; /*spacing between paragraph */
-    font-size: 1em;
-    line-height: 1.7em;
+/*font size*/
 
+main article p{
+    font-size: 1rem;
+    margin-bottom: 2em; /*spacing between paragraph */
+    line-height: 1.7;
+
+}
+
+main article h1{
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--color-heading);
+    margin-bottom: 0.5em;
+
+}
+
+main article h2{
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: var(--color-heading);
+    margin-top: 1.5em; /*room between sections*/
+    margin-bottom: 0.5em;
+    
 }
 
 main article ol{
