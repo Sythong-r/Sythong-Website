@@ -1,21 +1,49 @@
-/* General Reset */
-* {
+/* ===========
+Create varaibles for later use.
+Ease maintenance work.
+   =========== */
+
+:root{
+    --color-primary: #027b02; /* main green: heading + borders */
+    --color-primary-light: #8fd88f; /*nav hover background color*/
+    --color-bg: #eef3f7; /*page background*/
+    --color-heading: #000000; /*article heading*/
+    --color-nav-link: #4f4f4f; /*nav link text*/
+    --color-text-muted: #666666;  /*footer fineprint & disclaimer */
+    --font-body: Verdana, Geneva, Tahoma, sans-serif;
+}   
+
+/* ===========
+general reset
+   =========== */
+*,
+*::before,
+*::after{
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box /*width include padding + border*/
 }
 
+/* ===========
+Body
+   =========== */
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #eef3f7;
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word; /* word wrap for older browsers */
-    overflow-wrap: break-word; /* word wrap for newer browsers */
-    max-width: 100%;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    word-wrap: break-word; /* word wrap (older browsers) */
+    overflow-wrap: break-word; /* word wrap (newer browsers) */
+    /*set up sticky footer. make page a full-height vertical stack.
+    header + main + footer are stack. Main grow to fill the leftover space
+    so footer sit at cottom of screen*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /*(for older browsers)*/
+    min-height: 100dvh; /*dynamic veiwport; better on mobile*/
 }
 
-/* Header */
+/* ===========
+Header
+   =========== */
 header {
     text-align: center;
     padding: 2em 1em 0em 1em;
@@ -25,54 +53,52 @@ header h1 {
     font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 0.5em;
-    color: #027b02;
+    color: var(--color-primary);
 }
 
-* Navigation Bar */
+/* ===========
+Navigation bar
+   =========== */
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* wrapping for small screens */
+    flex-wrap: wrap; /* wrap onto new lines for small screens */
     justify-content: center;
     gap: 1em; /* space between menu item */
     margin-top: 1.5em;
     padding: 0 1em; /* prevents items from being cut off on small screens */
-    overflow: hidden; /* no items overflow */
-    height: 2em
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav ul li a {
     text-decoration: none; /*remove underline from under menu items */
-    color: #4f4f4f;
+    color: var(--color-nav-link);
     font-weight: bold;
     font-size: 1.5em;
-    padding: 0.5em 1em; /* add clickable area */
+    padding: 0.5em 1em; /* makes larger clickable area */
 }
 
-nav ul li a:hover {
-    background-color: #8fd88f; /* color change with mouse hover */
+nav ul li a:hover,
+nav ul li a:focus { /*so keyboard users see it too*/
+    background-color: var(--color-primary-light); /* color change with mouse hover */
 }
 
+/* ===========
+Navigation bar
+   =========== */
 main {
-    /* display: inline-block; */
-    line-height: 2em;
-    margin-top: 2em;
-    min-height: 82dvh; /*dvh dynamic min height*/
-    /* margin: 1em 1.8em 1em 1.8em; */
+    flex: 1;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    /* justify-content:center; */
+    align-items: center;
+    line-height: 2em;
+    margin-top: 2em;
+    /* min-height: 82dvh;*/  /*dvh dynamic min height*/
+    /* margin: 1em 1.8em 1em 1.8em; */ /*>this was guess work*/
 }
 
 main article {
-    margin: 1em 1.8em 1em 1.8em;
     width: 60%;
-
+    margin: 1em 1.8em;
 }
 
 /* this complicates formating images in posts */
@@ -82,36 +108,33 @@ main article {
     float: left;
     padding-right: 20px;
     margin-top: 0px;
-} */
+} */ /* > discarded code*/
 
 main article img.about-img{
     display: block;
     width: 45%;
     float: left;
     padding-right: 20px;
-    margin-top: 0px;
+    margin-top: 0;
 
 }
 
+/*default centered image*/
 main article img{
     display: block;
     width: 50%;
-    padding: auto;
     margin: auto;
 
 }
 
 main article h1{
     font-size: 1.25em;
-    color: #000000;
+    color: var(--color-heading);
 
 }
 
 main article address{
     display: block;
-    /* float: left; */
-    /* margin-bottom: 1em; */
-    /* width: 50%; */
 
 }
 
@@ -119,24 +142,22 @@ main article time{
     display: block;
     font-style: italic;
     margin-bottom: 1em;
-    /* width: 50%; */
-    /* float: left; */
-    /* text-align: right; */
 
 }
 
 main article p{
     margin-bottom: 2em; /*spacing between paragraph */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
     line-height: 1.7em;
-    /* display: inline-block; */
-    /* text-align: justify;
-    text-justify: inter-word; add space between word to justify text */
+
 }
 
 main article ol{
     margin-left: 3em
+}
+
+main article blockquote{
+    margin-left: 3em;
 }
 
 main article hr{
@@ -148,40 +169,74 @@ main article hr{
     margin: 10px auto;
 }
 
-main article blockquote{
-    margin-left: 3em;
-}
-/*footer*/
+
+/* ===========
+Footer
+   =========== */
 footer {
     text-align: center;
-    border-top: 2px solid #027b02;
-    height: 3em;
+    border-top: 2px solid var(--color-primary);
+    padding: 1.5em 1em; /* space inside: top/bottom and left/right */
     }
 
-footer a {
-    display: block;
-    margin: 0.75em;
+footer .social{
+    display: flex;
+    justify-content: center; /*center "connect with me" + icons*/
+    align-items: center; /*line text with icons*/
+    gap: 0.75em; /*space between text and icon*/
+    margin-bottom: 0.75em;
+    flex-wrap: wrap; /*allow drop to two lines on narrow screens*/
+}
+
+footer .social-heading{
+    font-weight: bold;
+}
+
+footer .social-links{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+footer .social-links a{
+    display: inline-flex;
+    text-decoration: none;
 }
 
 footer img {
     height: 1.5em;
-    float: center;
+    width: auto; /*keeps aspect ratio*/
 }
 
-/* Responsive header for small screen */
+footer p {
+    margin: 0.25em 0; /*spacing for any notes and disclaimer */
+}
+
+/*quieter footnote fine print*/
+footer .disclaimer {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+}
+
+/* ===========
+Responsive: small screens
+   =========== */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack navigation vertically on small screens */
+        flex-direction: column; /* Stack nav itmes vertically */
         align-items: center;
     }
+
     nav ul li a {
         font-size: 1em; /* Slightly smaller text for mobile */
         padding: 0.3em; /* Adjust spacing for better fit */
     }
+
     main {
-        margin: 0em;
-        padding-top: 1em; /*1.8em 1em 1.8em */
+        margin: 0;
+        padding-top: 1em; 
     }
+
     main article {
         width: 80%;
 
