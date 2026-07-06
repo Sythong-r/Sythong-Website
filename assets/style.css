@@ -240,14 +240,51 @@ Responsive: small screens
    =========== */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack nav itmes vertically */
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*2 equal colums*/
+        gap: 0.5em; /*space between cells*/
+        padding: 0 1em;
     }
 
     nav ul li a {
-        font-size: 1em; /* Slightly smaller text for mobile */
-        padding: 0.3em; /* Adjust spacing for better fit */
+        /*making the button*/
+        display: flex; /*make flex containder*/
+        align-items: center; /*center menu label vertically*/
+        justify-content: center; /*center menu label horizontally*/
+        
+        /*sizing button tile*/
+        height: 100%; /*fill full height of grid, tiles in same row stay even*/
+        min-height: 3em; /*comfortable tap target*/
+        padding: 0.75em 0.5em; /*padding top/bottom, left/right*/
+
+        /*button coloration*/
+        background-color: #ffffff; /*background color*/
+        border: 1px solid #dbe3ea; /*soft lining*/
+        border-radius: 8px;        /* round edges, button look */
+
+        /*text config*/
+        color: var(--color-nav-link); /*link text color*/
+        font-size: 1.1em; /*slightly bigger than body text*/
+
+        /*animation*/
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        /*change these 3 propeties over 0.2s, smooth visual transition*/
     }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background-color: var(--color-primary-light);
+        border-color: var(--color-primary-light);
+        color: #040404;
+    }
+
+/*for odd number of menu items, last item take up whole row*/
+   /* nav ul li:last-child:nth-child(odd) a {
+        
+    } */
+   /* nav ul li:last-child:nth-child(odd) {
+        grid-column: 1 / -1;   
+    } */
 
     main {
         margin: 0;
