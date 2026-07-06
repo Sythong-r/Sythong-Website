@@ -103,15 +103,15 @@ main article img{
 
 main article h1{
     font-size: 1.25em;
-    color: #3f5a4f;
+    color: #000000;
 
 }
 
 main article address{
     display: block;
-    float: left;
-    margin-bottom: 1em;
-    width: 50%;
+    /* float: left; */
+    /* margin-bottom: 1em; */
+    /* width: 50%; */
 
 }
 
@@ -119,9 +119,9 @@ main article time{
     display: block;
     font-style: italic;
     margin-bottom: 1em;
-    width: 50%;
-    float: right;
-    text-align: right;
+    /* width: 50%; */
+    /* float: left; */
+    /* text-align: right; */
 
 }
 
