@@ -69,17 +69,44 @@ nav ul {
     padding: 0 1em; /* prevents items from being cut off on small screens */
 }
 
-nav ul li a {
+/*selector kept short so mobile rules can override*/
+nav a {
+    display: block;
+    padding: 0.5em 1em; /* makes larger clickable area */
+    border-radius: 4px;
+    border: 1px solid transparent; /*reserves space so the mobile border
+                                    doesn't shift the layout when it appears*/
     text-decoration: none; /*remove underline from under menu items */
     color: var(--color-nav-link);
     font-weight: bold;
     font-size: 1.5em;
-    padding: 0.5em 1em; /* makes larger clickable area */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-nav ul li a:hover,
-nav ul li a:focus { /*so keyboard users see it too*/
+nav a:hover,
+nav a:focus-visible { /*focus-visible = keyboard users only, not mouse clicks*/
     background-color: var(--color-primary-light); /* color change with mouse hover */
+    color: #040404;
+}
+
+nav a:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/*current page marker (aria-current="page")
+-- for screen readers*/
+nav a[aria-current="page"] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/*current page stays put on hover*/
+nav a[aria-current="page"]:hover,
+nav a[aria-current="page"]:focus-visible {
+    background-color: var(--color-primary);
+    color: #ffffff;
 }
 
 /* ===========
@@ -246,7 +273,7 @@ Responsive: small screens
         padding: 0 1em;
     }
 
-    nav ul li a {
+    nav a {
         /*making the button*/
         display: flex; /*make flex containder*/
         align-items: center; /*center menu label vertically*/
@@ -259,11 +286,10 @@ Responsive: small screens
 
         /*button coloration*/
         background-color: #ffffff; /*background color*/
-        border: 1px solid #e0e0e0; /*soft lining*/
+        border-color: 1px solid #e0e0e0; /*soft lining*/
         border-radius: 8px; /* round edges, button look */
 
         /*text config*/
-        color: var(--color-nav-link); /*link text color*/
         font-size: 1.1em; /*slightly bigger than body text*/
 
         /*animation*/
@@ -271,12 +297,7 @@ Responsive: small screens
         /*change these 3 propeties over 0.2s, smooth visual transition*/
     }
 
-    nav ul li a:hover,
-    nav ul li a:focus {
-        background-color: var(--color-primary-light);
-        border-color: var(--color-primary-light);
-        color: #040404;
-    }
+    /*hover, focus and current-page colors iherit from the base rule*/
 
 /*for odd number of menu items, last item take up whole row*/
    /* nav ul li:last-child:nth-child(odd) a {
