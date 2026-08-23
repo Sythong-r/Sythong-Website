@@ -1,6 +1,25 @@
 /* ===========
-Create varaibles for later use.
+STYLESHEET
+Remember that reading order matter in css. When two rules target the same element, the more specific one wins. If they are equally specific, the later one wins. This setptup: general -> specific, top to bottom.
+
+Overview:
+1. variables
+2. reset
+3. body (page skeleton + footer)
+4. header
+5. navigation/menu
+6. main + article content
+7. blog index + post pages
+8. footer
+9. small screens
+   =========== */
+
+/* ===========
+1. Create varaibles for later use.
 Ease maintenance work.
+
+change color once here and it updates everywhere used.
+called with var(--name)
    =========== */
 
 :root{
@@ -14,7 +33,9 @@ Ease maintenance work.
 }   
 
 /* ===========
-general reset
+2. General reset
+
+browser ship their own defualy margin/padding that differ between them. zeroing everything means starting from known state and add spacing back deliberately. 
    =========== */
 *,
 *::before,
@@ -25,13 +46,14 @@ general reset
 }
 
 /* ===========
-Body
+3. Body
    =========== */
 body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
     word-wrap: break-word; /* word wrap (older browsers) */
     overflow-wrap: break-word; /* word wrap (newer browsers) */
+
     /*set up sticky footer. make page a full-height vertical stack.
     header + main + footer are stack. Main grow to fill the leftover space
     so footer sit at cottom of screen*/
@@ -39,14 +61,15 @@ body {
     flex-direction: column;
     min-height: 100vh; /*(for older browsers)*/
     min-height: 100dvh; /*dynamic veiwport; better on mobile*/
+    /*2 min-height lines are deliberate: browser that don't understand dch will ignore the second line--fallback*/
 }
 
 /* ===========
-Header
+4. Header
    =========== */
 header {
     text-align: center;
-    padding: 2em 1em 0em 1em;
+    padding: 2em 1em 0em 1em; /*top, right, bottom, left*/
 }
 
 header .site-name {
@@ -57,10 +80,10 @@ header .site-name {
 }
 
 /* ===========
-Navigation bar
+5. Navigation bar
    =========== */
 nav ul {
-    list-style: none;
+    list-style: none; /*drop bullet points*/
     display: flex;
     flex-wrap: wrap; /* wrap onto new lines for small screens */
     justify-content: center;
@@ -71,31 +94,34 @@ nav ul {
 
 /*selector kept short so mobile rules can override*/
 nav a {
-    display: block;
+    display: block; /*inline element ignore verticle padding block does not*/
     padding: 0.5em 1em; /* makes larger clickable area */
     border-radius: 4px;
-    border: 1px solid transparent; /*reserves space so the mobile border
-                                    doesn't shift the layout when it appears*/
+
+    /*transarent border reserve space so when mobile add visible order, the title doesn't grow & everything shift around it*/    
+    border: 1px solid transparent; 
     text-decoration: none; /*remove underline from under menu items */
     color: var(--color-nav-link);
     font-weight: bold;
     font-size: 1.5em;
+    /*smooth fade the 3 properties below instead of instant snap*/
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 nav a:hover,
-nav a:focus-visible { /*focus-visible = keyboard users only, not mouse clicks*/
+nav a:focus-visible { /*focus-visible = so keyboard users see it too*/
     background-color: var(--color-primary-light); /* color change with mouse hover */
     color: #040404;
 }
 
+/*focus-visible trigger for keyboard nav but not mouse clicks. focus leave clicked link stuck in huglighted state after you've moved on*/
 nav a:focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/*current page marker (aria-current="page")
--- for screen readers*/
+/*current page marker (aria-current="page" in html)
+-- for screen readers. sighted readers see green fill*/
 nav a[aria-current="page"] {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
@@ -103,6 +129,7 @@ nav a[aria-current="page"] {
 }
 
 /*current page stays put on hover*/
+/*without this hovering on current page trigger the transition (such as background)*/
 nav a[aria-current="page"]:hover,
 nav a[aria-current="page"]:focus-visible {
     background-color: var(--color-primary);
@@ -110,13 +137,13 @@ nav a[aria-current="page"]:focus-visible {
 }
 
 /* ===========
-Main
+6. Main
    =========== */
 main {
-    flex: 1;
+    flex: 1; /*grow to fill leftover space, pin footer down*/
     display:flex;
     flex-direction:column;
-    align-items: center;
+    align-items: center; /*center article column horizontally*/
     line-height: 2em;
     margin-top: 2em;
     /* min-height: 82dvh;*/  /*dvh dynamic min height*/
@@ -124,7 +151,7 @@ main {
 }
 
 main article {
-    width: 60%;
+    width: 60%; /*narrow column, long lines are hard to read*/
     margin: 1em 1.8em;
 }
 
@@ -135,12 +162,14 @@ main article {
     float: left;
     padding-right: 20px;
     margin-top: 0px;
-} */ /* > discarded code*/
+} */
+ /* ^ discarded code*/
 
+ /*this beats the plain img rule below it specificity. specify about pic*/
 main article img.about-img{
     display: block;
     width: 45%;
-    float: left;
+    float: left; /*text wrap*/
     padding-right: 20px;
     margin-top: 0;
     aspect-ratio: auto; /*opt out of the 16/9 aspcet ratio*/
@@ -152,7 +181,7 @@ main article img{
     display: block;
     width: 100%;
     aspect-ratio: 16/9; /*box to keep shape, height clas from width*/
-    object-fit: cover;
+    object-fit: cover; /*crop to fill the box rather than squash*/
     margin: 1.5em auto;
 
 }
@@ -171,11 +200,11 @@ main article time{
 }
 
 /*font size*/
-
+/*article text use rem so it is relative to root font size.*/
 main article p{
     font-size: 1rem;
     margin-bottom: 2em; /*spacing between paragraph */
-    line-height: 1.7;
+    line-height: 1.7; /*unitless, 1.7x this element's own font size*/
 
 }
 
@@ -197,7 +226,7 @@ main article h2{
 }
 
 main article ol{
-    margin-left: 3em
+    margin-left: 3em /*indent*/
 }
 
 main article blockquote{
@@ -205,7 +234,7 @@ main article blockquote{
 }
 
 main article hr{
-    border: none;
+    border: none; /*remove default engraved line*/
     height: 5px;
     background-color: black;
     border-radius: 5px;
@@ -213,9 +242,92 @@ main article hr{
     margin: 10px auto;
 }
 
+/* ===========
+7. Blog index + post page
+
+page title sits outside any <article>, need its own width to line up with excerpts below it. 
+   =========== */
+
+/*hide an element from sight while, kee it avialable to screen readers and search engines.
+DO NOT swap for dislay:none or visibiliyt:hidden, these would remove the elemetn from accessibility tree, which would defeat the entire point*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap; /*sto a long string from wrapping inside the 1px box*/
+}
+
+main .page-title {
+    width: 60%; /*match main article above so left edges align*/
+    margin: 0 1.8em 0.5em 1.8em;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--color-heading);
+}
+
+/*excerpt, same width as full article*/
+main .post-excerpt {
+    width: 60%;
+    margin: 1em 1.8em;
+}
+
+/*divider between excerpts
+the '+' is adacent sibling combinator:
+post-excerpt come after another post-excerpt
+remove the stray line that float between excerpts
+*/
+main .post-excerpt + .post-excerpt {
+    border-top: 2px solid var(--color-primary);
+    padding-top: 2em;
+}
+
+
+main .post-excerpt h2 {
+    margin-top: 0; /*cancel the 1.5em from article h2 ruls*/
+}
+
+/*excerpt titles are links but should be read as headings*/
+main .post-excerpt h2 a {
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+main .post-excerpt h2 a:hover,
+main .post-excerpt h2 a:focus-visible {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/*articel  rule set 2em below every paragraph, too much between a blurb and its own 'read more'*/
+main .post-excerpt {
+    margin-bottom: 0.75em;
+}
+
+main .read-more a,
+main .back-link a {
+    color: var(--color-nav-link);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*underline on hover: the color alone is not enough signal for somone who can't distinguish green from body text*/
+main .read-more a:hover,
+main .read-more a:focus-visible,
+main .back-link a:hover, 
+main .back-link a:focus-visible {
+    text-decoration: underline;
+}
+
+main .back-link {
+    margin-top: 3em; /*clear separation from the end of post*/
+}
 
 /* ===========
-Footer
+8. Footer
    =========== */
 footer {
     text-align: center;
@@ -243,7 +355,7 @@ footer .social-links{
 }
 
 footer .social-links a{
-    display: inline-flex;
+    display: inline-flex; /*shrink-wrap the link to icon no mystery gap below*/
     text-decoration: none;
 }
 
@@ -256,16 +368,18 @@ footer p {
     margin: 0.25em 0; /*spacing for any notes and disclaimer */
 }
 
-/*quieter footnote fine print*/
+/*quieter (as opposed to loud) footnote fine print*/
 footer .disclaimer {
     font-size: 0.8em;
     color: var(--color-text-muted);
 }
 
 /* ===========
-Responsive: small screens
+9. Responsive: small screens
    =========== */
 @media (max-width: 768px) {
+
+    /*flex menu become 2-column grid of tappable tiles*/
     nav ul {
         display: grid;
         grid-template-columns: 1fr 1fr; /*2 equal colums*/
@@ -278,6 +392,7 @@ Responsive: small screens
         display: flex; /*make flex containder*/
         align-items: center; /*center menu label vertically*/
         justify-content: center; /*center menu label horizontally*/
+        text-align: center; /*kee wrapped label centered*/
         
         /*sizing button tile*/
         height: 100%; /*fill full height of grid, tiles in same row stay even*/
@@ -286,7 +401,7 @@ Responsive: small screens
 
         /*button coloration*/
         background-color: #ffffff; /*background color*/
-        border-color: 1px solid #e0e0e0; /*soft lining*/
+        border-color: 1px solid #e0e0e0; /*soft lining. only color changes. 1px solid comes from base rule, so tiles don't resize*/
         border-radius: 8px; /* round edges, button look */
 
         /*text config*/
@@ -312,11 +427,22 @@ Responsive: small screens
         padding-top: 1em; 
     }
 
+    /*wider column on phones, 60% is too cramped*/
     main article {
         width: 80%;
 
     }
 
+    main .page-title {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+
+    main .post-excerpt {
+        width: 80%;
+    }
+
+    /*float doesn't help on narrow screen, stack it instead*/
     main article img.about-img{
     float: none;
     display: block;
