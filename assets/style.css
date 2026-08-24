@@ -179,13 +179,47 @@ main article img.about-img{
 /*image display setup*/
 main article img{
     display: block;
-    width: 100%;
-    aspect-ratio: 16/9; /*box to keep shape, height clas from width*/
-    object-fit: cover; /*crop to fill the box rather than squash*/
+    max-width: 100%;
+    height: auto;
     margin: 1.5em auto;
 
 }
 
+/*landscape image, fill column width*/
+main article img.landscape{
+    width: 90%
+}
+
+/*portrait, capped height so tall image don't take up whole screen, width adjust automaticall*/
+main article img.portrait{
+    max-height: 40em;
+    width: auto;
+}
+
+/*dealing with figure and caption*/
+main article figure{
+    display: table;
+    max-width: 100%; /*never wider than article column*/
+    margin: 1.5em auto; /*auto left/right keep figure centered*/
+}
+
+/*get rid of img's vetical margin inside figure*/
+main article figure img{
+    display: block;
+    max-width: 100%;
+    height: auto; /*real proportions, nothing cropped*/
+    margin: 0 auto;
+}
+
+main article figcaption{
+    display: table-caption;
+    caption-side: bottom;
+    font-size: 0.85rem; /*smaller than body text*/
+    line-height: 1.5; /*overide main line height (2em)*/
+    color: var(--color-text-muted);
+    margin-top: 0.6em; /*text close to the image*/
+    text-align: center; /*match centered image*/
+}
 
 main article address{
     display: block;
@@ -225,8 +259,11 @@ main article h2{
     
 }
 
-main article ol{
-    margin-left: 3em /*indent*/
+main article ol,
+main article ul {
+    margin-left: 3em; /*indent*/
+    margin-top: -1.8em; /*pull closer to paragraph*/
+    margin-bottom: 2em; /*match paragraph spacing*/
 }
 
 main article blockquote{
@@ -452,7 +489,11 @@ footer .disclaimer {
     }
 
     main article img{
-        aspect-ratio: 4/3; /*taller box, more height on phone*/
+        margin: 1em auto;
+    }
+
+    main article img.portrait{
+        max-height: 22em; /*adjust height for short screen*/
     }
     
     main article h1{
